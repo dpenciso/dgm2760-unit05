@@ -36,3 +36,21 @@ document.querySelector('#remove_tree1').onclick = () => {
         errorElement.textContent = 'I cannot remove the first tree cause there are NO TREES'
     }
 }
+
+document.querySelector('#remove_tree2').onclick = () => {
+    if (trees.length > 0) {
+        trees.splice(1, 1)
+        listTrees()
+    } else {
+        errorElement.textContent = 'I cannot remove the second tree cause there are NO SECOND TREES'
+    }
+}
+
+document.querySelector('#remove_treeLast').onclick = () => {
+    if (trees.length > 0) {
+        trees.pop()
+        listTrees()
+    } else {
+        errorElement.textContent = 'I cannot remove the last tree cause there is NO LAST TREE'
+    }
+}
