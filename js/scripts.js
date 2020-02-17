@@ -1,5 +1,5 @@
 // create an array with 4 trees listed
-const trees = ['oak', 'Pine', 'aspen', 'Bald Cypress']
+const trees = ['Oak', 'Pine', 'Aspen', 'Bald Cypress']
 
 const errorElement = document.querySelector('#error')
 
@@ -52,5 +52,30 @@ document.querySelector('#remove_treeLast').onclick = () => {
         listTrees()
     } else {
         errorElement.textContent = 'I cannot remove the last tree cause there is NO LAST TREE'
+    }
+}
+
+document.querySelector('#sortTrees').onclick = () => {
+    trees.sort()
+    listTrees()
+}
+
+// document.querySelector('#lowerTrees').onclick = () => {
+    
+// }
+
+document.querySelector('#showName3').onclick = () => {
+    if (trees.length > 2) {
+        displayResults.textContent = trees[2]
+    } else {
+        errorElement.textContent = "There is no third tree"
+    }
+}
+
+document.querySelector('#showName3').onclick = () => {
+    if (trees.length > 3) {
+        displayResults.textContent = trees[3]
+    } else {
+        errorElement.textContent = "There is no fourth tree"
     }
 }
