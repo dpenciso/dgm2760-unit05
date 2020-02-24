@@ -60,9 +60,18 @@ document.querySelector('#sortTrees').onclick = () => {
     listTrees()
 }
 
-// document.querySelector('#lowerTrees').onclick = () => {
+document.querySelector('#lowerTrees').onclick = () => {
+    cnt = -1;
+  trees.forEach(tree => {
+    tree = tree.toLowerCase();
+    trees.splice((cnt += 1), 1, tree);
+  });
+  listTrees();
+  if (trees.length == 0) {
+    errorElement.textContent = "There are no trees to make lower case";
+  }
+};
     
-// }
 
 document.querySelector('#showName3').onclick = () => {
     if (trees.length > 2) {
@@ -72,7 +81,7 @@ document.querySelector('#showName3').onclick = () => {
     }
 }
 
-document.querySelector('#showName3').onclick = () => {
+document.querySelector('#showName4').onclick = () => {
     if (trees.length > 3) {
         displayResults.textContent = trees[3]
     } else {
